@@ -1,8 +1,5 @@
 - hosts: webservers
 
-  vars:
-    pip_install_packages:
-      - docker
-
   roles:
     - geerlingguy.pip
+    - datadog.dd.agent

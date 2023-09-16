@@ -1,6 +1,8 @@
+install_dependencies:
+	ansible-galaxy install -r requirements.yml
+
 configure:
-	ansible-galaxy install geerlingguy.pip
-	ansible-playbook playbooks/setup.yml -i inventory.ini
+	ansible-playbook playbooks/setup.yml -i inventory.ini --ask-vault-password
 
 deploy:
 	ansible-playbook playbooks/deploy.yml -i inventory.ini --ask-vault-password
